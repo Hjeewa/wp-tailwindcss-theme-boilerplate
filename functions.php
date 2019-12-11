@@ -19,6 +19,21 @@ $loader = new AutoLoader();
 $loader->register();
 $loader->addNamespace( 'vlTailwind', get_stylesheet_directory() . '/app' );
 
-View::$view_dir = get_stylesheet_directory() . '/templates/views';
+// View::$view_dir = get_stylesheet_directory() . '/templates/views';
+
+
+$vlTailwind_includes = array(
+	'/template-tags.php',                   // Custom template tags for this theme.
+
+);
+
+foreach ( $vlTailwind_includes as $file ) {
+	$filepath = locate_template( 'includes' . $file );
+	if ( ! $filepath ) {
+		trigger_error( sprintf( 'Error locating /inc%s for inclusion', $file ), E_USER_ERROR );
+	}
+	require_once $filepath;
+}
+
 
 require get_stylesheet_directory() . '/includes/scripts-and-styles.php';
