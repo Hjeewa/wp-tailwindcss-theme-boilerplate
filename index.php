@@ -19,7 +19,9 @@ get_header();?>
     <?php else: 
         get_template_part( 'templates/loop/content', 'none' ); 
     endif; ?>
-        
+
+    <?php vlTailwind_pagination(); ?>
+
     <?php get_template_part( 'templates/sidebar/right'); ?>
     
 </div>
