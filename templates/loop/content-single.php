@@ -1,10 +1,5 @@
 <?php
-/**
- * Single post partial template.
- *
- * @package understrap
- */
-
+// Single post partial template.
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 ?>
@@ -14,9 +9,7 @@ defined( 'ABSPATH' ) || exit;
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
 	<div class="entry-content">
-
 		<?php the_content(); ?>
+	</div>
 
-	</div><!-- .entry-content -->
-
-</article><!-- #post-## -->
+</article>

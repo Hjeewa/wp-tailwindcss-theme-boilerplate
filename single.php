@@ -5,36 +5,32 @@ defined( 'ABSPATH' ) || exit;
 
 get_header(); ?>
 
-
 	<div class="container">
 
 		<?php get_template_part( 'templates/sidebar/left'); ?>
 
 		<main class="site-main" id="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'loop-templates/content', 'single' ); ?>
-
-
-			<?php endwhile; // end of the loop. ?>
-
-		</main><!-- #main -->
+			<?php while ( have_posts() ) : the_post(); 
+				get_template_part( 'loop-templates/content', 'single' ); 
+			endwhile;?>
+		</main>
 
 		<?php get_template_part( 'templates/sidebar/right'); ?>
 
 	</div>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<div class="container">
 
-		<?php
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || get_comments_number() ) :
-			comments_template();
-		endif;
-		?>
+		<?php while ( have_posts() ) : the_post(); 
 
-	<?php endwhile; // end of the loop. ?>
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		
+		endwhile; ?>
 
+	</div>
 
 <?php get_footer();
