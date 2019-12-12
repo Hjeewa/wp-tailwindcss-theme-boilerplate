@@ -1,8 +1,30 @@
-<?php
+<?php get_header();?>
+
+<div class="container">
 
 
-get_header();
+    <?php get_template_part( 'templates/sidebar/left'); ?>
 
-get_template_part( 'templates/partials/example' );
+    <?php if ( have_posts() ) : ?>
+        <main>
 
-get_footer();
+            <?php while ( have_posts() ) : the_post(); ?>
+
+                <?php get_template_part( 'templates/loop/content', get_post_format() ); ?>
+
+            <?php endwhile; ?>
+
+        </main>
+
+    <?php else : ?>
+
+        <?php get_template_part( 'templates/loop/content', 'none' ); ?>
+
+    <?php endif; ?>
+        
+    <?php get_template_part( 'templates/sidebar/right'); ?>
+    
+</div>
+
+
+<?php get_footer();
