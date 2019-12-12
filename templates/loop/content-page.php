@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php if (is_user_logged_in()):?>
 		<footer class="entry-footer">
-			<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php edit_post_link( __( 'Edit', 'vlTailwind' ), '<span class="edit-link">', '</span>' ); ?>
 		</footer>
 	<?php endif;?>	
 
