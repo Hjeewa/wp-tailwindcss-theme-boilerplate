@@ -25,6 +25,7 @@ View::$view_dir = get_stylesheet_directory() . '/templates/views';
 $vlTailwind_includes = array(
 	'/setup.php',					// Some theme setup functions
 	'/template-tags.php',			// Custom template tags
+	'/pagination.php',				// Pagination 
 
 );
 
