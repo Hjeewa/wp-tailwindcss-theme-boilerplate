@@ -19,7 +19,7 @@ $loader = new AutoLoader();
 $loader->register();
 $loader->addNamespace( 'vlTailwind', get_stylesheet_directory() . '/app' );
 
-// View::$view_dir = get_stylesheet_directory() . '/templates/views';
+View::$view_dir = get_stylesheet_directory() . '/templates/views';
 
 
 $vlTailwind_includes = array(
