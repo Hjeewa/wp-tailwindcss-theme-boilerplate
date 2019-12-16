@@ -60,9 +60,7 @@ if ( ! function_exists( 'vlTailwind_entry_footer' ) ) {
 	}
 }
 
-
-// Prints HTML with meta information for the categories and tags.
- 
+// Prints HTML with meta information for the post categories and tags
 if ( ! function_exists( 'vlTailwind_entry_cats' ) ) {
 	function vlTailwind_entry_cats() {
 		// Hide category and tag text for pages.
@@ -84,10 +82,7 @@ if ( ! function_exists( 'vlTailwind_entry_cats' ) ) {
 }
 
 
-
-
 // Returns true if a blog has more than 1 category.
-
 if ( ! function_exists( 'vlTailwind_categorized_blog' ) ) {
 	function vlTailwind_categorized_blog() {
 		if ( false === ( $all_the_cool_cats = get_transient( 'vlTailwind_categories' ) ) ) {
@@ -109,5 +104,37 @@ if ( ! function_exists( 'vlTailwind_categorized_blog' ) ) {
 			// This blog has only 1 category so components_categorized_blog should return false.
 			return false;
 		}
+	}
+}
+
+
+// Prints HTML with meta information for the taxonomies
+if ( ! function_exists( 'vlTailwind_entry_tax' ) ) {
+	function vlTailwind_entry_tax() {
+		// Get post by post ID.
+		if ( ! $post = get_post() ) {
+			return '';
+		}
+		// Get post type by post.
+		$post_type = $post->post_type;
+		// Get post type taxonomies.
+		$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+	
+		$out = array();
+	
+		foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+	
+			// Get the terms related to post.
+			$terms = get_the_terms( $post->ID, $taxonomy_slug );
+	
+			if ( ! empty( $terms ) ) {
+				$out[] = "<div class='tax-links'>";
+				foreach ( $terms as $term ) {
+					$out[] = sprintf( '<a href="%1$s" rel="taxonomy">%2$s</a> ', esc_url( get_term_link( $term->slug, $taxonomy_slug ) ), esc_html( $term->name ) );
+				}
+				$out[] = "</div>";
+			}
+		}
+		echo implode( '', $out );
 	}
 }
