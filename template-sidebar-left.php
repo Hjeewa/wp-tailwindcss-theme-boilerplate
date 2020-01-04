@@ -1,20 +1,16 @@
 <?php
-// The template for displaying pages
+
+// Sidebar left template
+// Template Name: Sidebar - Right
+
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 get_header(); 
-
-$left_sidebar = false;
-$right_sidebar = false;
-
 ?>
 
 	<div class="container">
-		<?php if($left_sidebar === true):?>
-			<?php get_template_part( 'templates/sidebar/left'); ?>
-		<?php endif;?>
-
+		
 		<main>
 
 			<?php while ( have_posts() ) : the_post(); 
@@ -22,9 +18,7 @@ $right_sidebar = false;
 			endwhile;?>
 
 		</main>
-		<?php if($right_sidebar === true):?>
-			<?php get_template_part( 'templates/sidebar/right'); ?>
-		<?php endif;?>
+        <?php get_template_part( 'templates/sidebar/right'); ?>
 
 	</div>
 
