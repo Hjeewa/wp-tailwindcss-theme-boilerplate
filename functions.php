@@ -26,7 +26,8 @@ $vlTailwind_includes = array(
 	'/setup.php',					// Some theme setup functions
 	'/template-tags.php',			// Custom template tags
 	'/pagination.php',				// Pagination 
-
+	'/sidebars.php',				// Sidebars 
+	'/scripts-and-styles.php' 		// enqueue scripts and styles
 );
 
 foreach ( $vlTailwind_includes as $file ) {
@@ -36,6 +37,3 @@ foreach ( $vlTailwind_includes as $file ) {
 	}
 	require_once $filepath;
 }
-
-
-require get_stylesheet_directory() . '/includes/scripts-and-styles.php';
