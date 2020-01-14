@@ -16,7 +16,7 @@ module.exports = {
             lineHeight: {
                 tighter: '1.125',
             },
-        }
+        },
     },
     variants: {
         textColor: ['responsive', 'hover', 'focus', 'visited'],

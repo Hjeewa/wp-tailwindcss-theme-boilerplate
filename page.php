@@ -5,27 +5,42 @@ defined( 'ABSPATH' ) || exit;
 
 get_header(); 
 
-$left_sidebar = false;
+// for now, just one should be true
+$left_sidebar = true;
 $right_sidebar = false;
 
 ?>
 
-	<div class="container">
+	<div class="container flex flex-row">
+
 		<?php if($left_sidebar === true):?>
-			<?php get_template_part( 'templates/sidebar/left'); ?>
+			<aside class="w-1/4 pr-10">
+				<?php get_template_part( 'templates/sidebar/left'); ?>
+			</aside>
 		<?php endif;?>
 
-		<main>
 
-			<?php while ( have_posts() ) : the_post(); 
-				get_template_part( 'templates/loop/content', 'page' );
-			endwhile;?>
+		<?php while ( have_posts() ) : the_post(); 
+			
+			if($left_sidebar === true or $right_sidebar === true):?>
+				<main class="w-3/4">
+					<?php get_template_part( 'templates/loop/content', 'page' );?>
+				</main>
+			<?php else:?>
+				<main>
+					<?php get_template_part( 'templates/loop/content', 'page' );?>
+				</main>
+			<?php endif;
 
-		</main>
+		endwhile;?>
+
+
 		<?php if($right_sidebar === true):?>
-			<?php get_template_part( 'templates/sidebar/right'); ?>
+			<aside class="flex-1 pl-10">
+				<?php get_template_part( 'templates/sidebar/right'); ?>
+			</aside>
 		<?php endif;?>
-
+		
 	</div>
 
 	<div class="container">
