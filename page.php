@@ -37,6 +37,6 @@ $right_sidebar = false;
 			endif;
 		endwhile;?>
 
-	<div>
+	</div>
 
 <?php get_footer();
