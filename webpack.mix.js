@@ -36,7 +36,6 @@ mix.purgeCss({
     paths: () => glob.sync([
         path.join(__dirname, '*.php'),
         path.join(__dirname, 'templates/**/*.php'),
-        path.join(__dirname, 'includes/**/*.php'),
         path.join(__dirname, 'build/js/**/*.js'),
     ]),
 });

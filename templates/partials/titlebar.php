@@ -1,18 +1,19 @@
 <?php 
 
-if( get_theme_mod( 'vl_title_display') == 'true' || get_theme_mod( 'vl_creadcrumbs_display') == 'true') : ?>
 
-    <div>
-        <div class="container">
-            <?php if( get_theme_mod( 'vl_title_display') == 'true' ) : ?>
-                <h1 class="titlebar-title"><?php echo vlTailwind_title();?></h1>
-            <?php endif;?>
+$title = false;
+$breadcrumbs = false;
 
-            <?php if( get_theme_mod( 'vl_breadcrumbs_display') == 'true' ) : ?>
-                <?php vlTailwind_breadcrumb_trail();?>
-            <?php endif;?>
-        </div>
+?>
+
+<div>
+    <div class="container">
+        <?php if ( function_exists( 'vlTailwind_title' ) && ($title === true)): ?>
+            <h1><?php echo vlTailwind_title();?></h1>
+        <?php endif;?>
+
+        <?php if ( function_exists( 'vlTailwind_breadcrumb_trail' ) && ($breadcrumbs === true)): ?>
+            <?php vlTailwind_breadcrumb_trail();?>
+        <?php endif;?>
     </div>
-
-<?php endif;?>
-
+</div>
