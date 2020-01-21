@@ -3,28 +3,23 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); 
-
-// for now, just one should be true
-$left_sidebar = true;
-$right_sidebar = true;
-
-?>
+get_header(); ?>
 
 <div class="container flex flex-row">
 
-    <?php if($left_sidebar === true):?>
-        <aside class="w-1/4 pr-10">
-            <?php get_template_part( 'templates/sidebar/left'); ?>
-        </aside>
-    <?php endif;?>
+        <?php if( get_theme_mod( 'vl_sidebar_display') == 'left' ) : ?>
+            <aside class="sidebar w-1/4 pr-10">
+                <?php get_template_part( 'templates/sidebar/left'); ?>
+            </aside>
+        <?php endif ?>
+
 
     <?php if ( have_posts() ) : ?>
 
-        <?php if($left_sidebar === true or $right_sidebar === true):?>
-            <main class="w-3/4">
+        <?php if( get_theme_mod( 'vl_sidebar_display') == 'left' || get_theme_mod( 'vl_sidebar_display') == 'right' ) : ?>
+            <main class="w-3/4 flex flex-wrap row">
         <?php else:?>
-            <main>
+            <main class="flex flex-wrap row">
         <?php endif;?>
 
         <?php while ( have_posts() ) : the_post(); ?>
@@ -39,12 +34,12 @@ $right_sidebar = true;
 
     <?php vlTailwind_pagination(); ?>
 
-    <?php if($right_sidebar === true):?>
-        <aside class="flex-1 pl-10">
+    <?php if( get_theme_mod( 'vl_sidebar_display') == 'right' ) : ?>
+        <aside class="sidebar flex-1 pl-10">
             <?php get_template_part( 'templates/sidebar/right'); ?>
         </aside>
     <?php endif;?>
-		
+
 </div>
 
 <?php get_footer();

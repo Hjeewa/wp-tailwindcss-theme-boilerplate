@@ -3,26 +3,20 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-get_header(); 
-
-// for now, just one should be true
-$left_sidebar = true;
-$right_sidebar = false;
-
-?>
+get_header(); ?>
 
 	<div class="container flex flex-row">
 
-		<?php if($left_sidebar === true):?>
-			<aside class="w-1/4 pr-10">
+		<?php if( get_theme_mod( 'vl_sidebar_display') == 'left' ) : ?>
+			<aside class="sidebar w-1/4 pr-10">
 				<?php get_template_part( 'templates/sidebar/left'); ?>
 			</aside>
 		<?php endif;?>
 
 
-		<?php while ( have_posts() ) : the_post(); 
+		<?php while ( have_posts() ) : the_post();
 			
-			if($left_sidebar === true or $right_sidebar === true):?>
+        	if( get_theme_mod( 'vl_sidebar_display') == 'left' || get_theme_mod( 'vl_sidebar_display') == 'right' ) : ?>
 				<main class="w-3/4">
 					<?php get_template_part( 'templates/loop/content', 'page' );?>
 				</main>
@@ -35,8 +29,8 @@ $right_sidebar = false;
 		endwhile;?>
 
 
-		<?php if($right_sidebar === true):?>
-			<aside class="flex-1 pl-10">
+		<?php if( get_theme_mod( 'vl_sidebar_display') == 'right' ) : ?>
+			<aside class="sidebar flex-1 pl-10">
 				<?php get_template_part( 'templates/sidebar/right'); ?>
 			</aside>
 		<?php endif;?>
