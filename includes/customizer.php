@@ -15,7 +15,7 @@ add_action( 'customize_register', 'cd_customizer_settings' );
     ) );
 
     $wp_customize->add_setting( 'vl_sidebar_display' , array(
-        'default'     => 'none',
+        'default'     => true,
         'transport'   => 'refresh',
     ) );
   
@@ -25,7 +25,6 @@ add_action( 'customize_register', 'cd_customizer_settings' );
         'settings' => 'vl_sidebar_display',
         'type' => 'select',
         'choices' => array(
-            'none' => 'No Sidebar',
             'left' => 'Left Sidebar',
             'right' => 'Right Sidebar',
             ),

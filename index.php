@@ -19,7 +19,7 @@ get_header(); ?>
         <?php if( get_theme_mod( 'vl_sidebar_display') == 'left' || get_theme_mod( 'vl_sidebar_display') == 'right' ) : ?>
             <main class="w-3/4 flex flex-wrap row">
         <?php else:?>
-            <main class="w-full flex flex-wrap row">
+            <main class="flex flex-wrap row">
         <?php endif;?>
 
         <?php while ( have_posts() ) : the_post(); ?>
