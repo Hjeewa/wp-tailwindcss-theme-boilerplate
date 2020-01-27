@@ -1,3 +1,3 @@
 <!-- Site footer markup goes here -->
 
-<?php get_template_part( 'templates/partials/document-close' );
+<?php include( locate_template( 'templates/partials/document-close.php', false, false ) );

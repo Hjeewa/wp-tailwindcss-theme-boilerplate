@@ -1,5 +1,5 @@
-<?php get_template_part( 'templates/partials/document-open' ); ?>
+<?php include( locate_template( 'templates/partials/document-open.php', false, false ) );?>
 
-<?php get_template_part('templates/partials/titlebar');?>
+<?php include( locate_template( 'templates/partials/titlebar.php', false, false ) );?>
 
 <!-- Site header markup goes here -->
