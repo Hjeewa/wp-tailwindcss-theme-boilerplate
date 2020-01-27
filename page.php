@@ -20,28 +20,25 @@ elseif(get_field('show_sidebar_global','option') == 1 ){
 
 	<?php if($sidebar_location === 'left'):?>
 		<aside class="sidebar w-1/4 pr-10">
-			<?php get_template_part( 'templates/sidebar/left'); ?>
+			<?php include( locate_template( 'templates/sidebar/left.php', false, false ) );?>
 		</aside>
 	<?php endif;?>
 
-	<?php while ( have_posts() ) : the_post(); 
-		
-		if($sidebar_location === 'right' or $sidebar_location === 'left'):?>
-            <main class="w-3/4 flex flex-wrap row">
-				<?php get_template_part( 'templates/loop/content', 'page' );?>
-			</main>
-		<?php else:?>
-            <main class="flex flex-wrap row">
-				<?php get_template_part( 'templates/loop/content', 'page' );?>
-			</main>
-		<?php endif;
+	<?php if($sidebar_location === 'right' or $sidebar_location === 'left'):?>
+		<main class="w-3/4 flex flex-wrap">	
+	<?php else:?>
+		<main class="flex flex-wrap">
+	<?php endif;?>
 
-	endwhile;?>
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php include( locate_template( 'templates/loop/content-page.php', false, false ) );?>
+		<?php endwhile;?>
 
+	</main>
 
 	<?php if($sidebar_location === 'right'):?>
 		<aside class="sidebar flex-1 pl-10">
-			<?php get_template_part( 'templates/sidebar/right'); ?>
+			<?php include( locate_template( 'templates/sidebar/right.php', false, false ) );?>
 		</aside>
 	<?php endif;?>
 	

@@ -19,34 +19,33 @@ elseif(get_field('show_sidebar_global','option') == 1 ){
 
     <?php if($sidebar_location === 'left'):?>
         <aside class="sidebar w-1/4 pr-10">
-            <?php get_template_part( 'templates/sidebar/left'); ?>
+            <?php include( locate_template( 'templates/sidebar/left.php', false, false ) );?>
         </aside>
     <?php endif;?>
 
-    <?php if ( have_posts() ) : ?>
+    <?php if($sidebar_location === 'right' or $sidebar_location === 'left'):?>
+    <main class="w-3/4 flex flex-wrap">
+    <?php else:?>
+    <main class="flex flex-wrap">
+    <?php endif;?>
 
-        <?php if($sidebar_location === 'right' or $sidebar_location === 'left'):?>
-            <main class="w-3/4 flex flex-wrap row">
-        <?php else:?>
-            <main class="flex flex-wrap row">
-        <?php endif;?>
+        <?php if ( have_posts() ) : ?>
+            <?php while ( have_posts() ) : the_post(); ?>
+                <?php include( locate_template( 'templates/loop/content.php', false, false ) );?>
+            <?php endwhile; ?>
 
-        <?php while ( have_posts() ) : the_post(); ?>
-            <?php get_template_part( 'templates/loop/content', get_post_format() ); ?>
-        <?php endwhile; ?>
+        <?php else: 
+            include( locate_template( 'templates/loop/content-none.php', false, false ) );
+        endif; ?>
 
-    <?php else: 
-        get_template_part( 'templates/loop/content', 'none' ); 
-    endif; ?>
-    
-    <?php vlTailwind_pagination(); ?>
+        <?php vlTailwind_pagination(); ?>
 
     </main>
 
 
     <?php if($sidebar_location === 'right'):?>
         <aside class="sidebar flex-1 pl-10">
-            <?php get_template_part( 'templates/sidebar/right'); ?>
+            <?php include( locate_template( 'templates/sidebar/right.php', false, false ) );?>
         </aside>
     <?php endif;?>
 		
