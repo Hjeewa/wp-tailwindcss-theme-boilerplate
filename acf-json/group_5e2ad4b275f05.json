@@ -62,6 +62,59 @@
             "mime_types": ""
         },
         {
+            "key": "field_5e2f3a855bf03",
+            "label": "Show Sidebar?",
+            "name": "show_sidebar_local",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e2f4200a8b7d",
+            "label": "Sidebar Location",
+            "name": "sidebar_location_local",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5e2f3a855bf03",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "choices": {
+                "left": "Left",
+                "right": "Right"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_5e2d7f3bca4de",
             "label": "Global Options",
             "name": "",
@@ -94,26 +147,6 @@
             "message": "Global options can be found <a href=\"\">here<\/a>. Page based options will override global options.",
             "new_lines": "wpautop",
             "esc_html": 0
-        },
-        {
-            "key": "field_5e2f3a855bf03",
-            "label": "Show Sidebar?",
-            "name": "show_sidebar_local",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "acfe_permissions": "",
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
         }
     ],
     "location": [
@@ -141,5 +174,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1580153853
+    "modified": 1580156368
 }
