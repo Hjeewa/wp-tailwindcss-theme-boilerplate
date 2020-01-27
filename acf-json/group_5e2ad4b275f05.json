@@ -19,6 +19,54 @@
             "endpoint": 0
         },
         {
+            "key": "field_5e2f548e7ec38",
+            "label": "Show Page Title",
+            "name": "show_page_title_local",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "choices": {
+                "global": "Global",
+                "show": "Show",
+                "hide": "Hide"
+            },
+            "allow_null": 0,
+            "default_value": "global",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5e2f54ab7ec39",
+            "label": "Show Breadcrumbs",
+            "name": "show_breadcrumbs_local",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "choices": {
+                "global": "Global",
+                "show": "Show",
+                "hide": "Hide"
+            },
+            "allow_null": 0,
+            "default_value": "global",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_5e2ad4e085bd5",
             "label": "Page Subtitle",
             "name": "page_subtitle",
@@ -192,5 +240,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1580158752
+    "modified": 1580162122
 }

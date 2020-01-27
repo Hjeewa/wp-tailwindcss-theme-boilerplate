@@ -3,6 +3,69 @@
     "title": "Theme Options",
     "fields": [
         {
+            "key": "field_5e2f58e4fd97f",
+            "label": "Title Bar Options",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5e2f58f1fd980",
+            "label": "Show Page Title",
+            "name": "show_page_title_global",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "choices": {
+                "show": "Show",
+                "hide": "Hide"
+            },
+            "allow_null": 0,
+            "default_value": "show",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5e2f5920fd981",
+            "label": "Show Breadcrumbs",
+            "name": "show_breadcrumbs_global",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "choices": {
+                "show": "Show",
+                "hide": "Hide"
+            },
+            "allow_null": 0,
+            "default_value": "show",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_5e2f44b8eebeb",
             "label": "Layout Options",
             "name": "",
@@ -98,5 +161,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1580156382
+    "modified": 1580162217
 }
