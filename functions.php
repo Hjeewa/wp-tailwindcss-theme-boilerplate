@@ -29,7 +29,8 @@ $vlTailwind_includes = array(
 	'/sidebars.php',				// Sidebars 
 	'/scripts-and-styles.php',		// enqueue scripts and styles
 	'/page-titles.php', 			// page title function
-	'/breadcrumbs.php' 				// breadcrumbs trail function
+	'/breadcrumbs.php', 			// breadcrumbs trail function
+	'/acf.php' 						// ACF settings
 );
 
 foreach ( $vlTailwind_includes as $file ) {
