@@ -1,6 +1,5 @@
 <?php 
 
-
 if(get_field('show_page_title_local') != 'global' ){
 	$show_page_title = get_field('show_page_title_local');
 }
@@ -32,6 +31,9 @@ $page_subtitle =  get_field( 'page_subtitle' );
         <?php if ($show_breadcrumbs == 'show'): ?>
             <?php vlTailwind_breadcrumb_trail();?>
         <?php endif;?>
+
+        <?php echo $page_subtitle;?>
+
     </div>
 </div>
 
