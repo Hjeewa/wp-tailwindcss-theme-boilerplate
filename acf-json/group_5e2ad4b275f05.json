@@ -98,8 +98,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "medium",
+            "acfe_permissions": "",
+            "acfe_uploader": "wp",
+            "acfe_thumbnail": 0,
+            "return_format": "id",
+            "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -240,5 +243,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1580162122
+    "modified": 1580215492
 }
