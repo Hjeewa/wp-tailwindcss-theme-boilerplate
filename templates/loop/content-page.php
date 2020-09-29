@@ -2,6 +2,9 @@
 // Partial template for page content
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
+global $post;
+
 ?>
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">

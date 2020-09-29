@@ -12,10 +12,11 @@ if(get_field('show_sidebar_local') == 1 ){
 }
 elseif(get_field('show_sidebar_global','option') == 1 ){
 	$sidebar_location = get_field('sidebar_location_global','option');
-};
+}else{
+	$sidebar_location = null;
+}
 
 ?>
-
 <div class="container flex flex-row">
 
 	<?php if($sidebar_location === 'left'):?>
