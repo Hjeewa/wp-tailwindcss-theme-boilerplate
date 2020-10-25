@@ -61,9 +61,6 @@ h3, h4, h5 {
 
 // Other
 // =≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠
-p, ul, ol, .wp-block-embed {
-  @apply my-8;
-}
 
 code {
   @apply font-mono inline-block px-1 rounded-sm text-sm align-baseline bg-pink-100 text-pink-600;
