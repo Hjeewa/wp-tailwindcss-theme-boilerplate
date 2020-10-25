@@ -1,3 +1,16 @@
+
+$theme : "themeName";
+// $parenttheme : "parentThemeName";
+
+$domain : "https://domainName.com"; 
+// $domain : "https://staging.domainName.com"; 
+
+$imagesrc : "#{$domain}/wp-content/themes/#{$theme}/assets/img"; 
+$themesrc : "#{$domain}/wp-content/themes/#{$theme}"; 
+$fontssrc : "#{$domain}/wp-content/themes/#{$theme}/assets/font"; 
+// $parentsrc : "#{$domain}/wp-content/themes/#{$parenttheme}"; 
+
+
 @import "lib/mixins";
 @import "~tailwindcss/base";
 @import "partials/base";
