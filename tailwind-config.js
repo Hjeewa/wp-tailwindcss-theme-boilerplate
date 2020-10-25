@@ -3,11 +3,11 @@ const { screens } = require('tailwindcss/defaultTheme')
 module.exports = {
     theme: {
         container: {
-            center: true,  
             padding:{
                 default : '1rem',
                 lg: '1.5rem',
             },
+            center: true,  
         },
         screens : {
             xs: '420px',
@@ -18,41 +18,7 @@ module.exports = {
                 link: {
                     'default': '#3182ce',
                     'hover': '#63b3ed',
-                },
-                yellow : '#FFD327',
-                light_yellow : '#FFF6DB',
-                dark_grey : '#485156',
-                light_grey : '#EDEFF0',
-                accent1 : '#598A9C',
-                accent2 : '#CAD772',
-                accent3 : '#C1AFA2',
-                accent4 : '#CCADBF',
-                
-            },
-            fontFamily: {
-                sans: [
-                    'Gilroy Sans',
-                    '-apple-system',
-                    'BlinkMacSystemFont',
-                    '"Segoe UI"',
-                    'Roboto',
-                    '"Helvetica Neue"',
-                    'Arial',
-                    '"Noto Sans"',
-                    'sans-serif',
-                    '"Apple Color Emoji"',
-                    '"Segoe UI Emoji"',
-                    '"Segoe UI Symbol"',
-                    '"Noto Color Emoji"',
-                ],
-                serif: [
-                    'PT Serif',
-                    'Georgia',
-                    'Cambria',
-                    '"Times New Roman"',
-                    'Times',
-                    'serif',
-                ],
+                }
             },
             fontSize: {
                 xxs: '0.675rem',

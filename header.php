@@ -5,10 +5,10 @@
 
 ?>
 
-<header>
-    <div class="bg-light_yellow pt-12 pb-12">
+<header class="pt-12">
+    <div>
         <div class="container">
-            <div class="flex items-center">
+            <div class="flex">
                 <div class="w-1/3">
                     <a href="<?php echo site_url();?>">
                         <svg class="w-40" width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.4 41.6">
@@ -24,13 +24,13 @@
                     <?php if ( has_nav_menu( $main_menu ) ): ?>
 
                         <nav id="<?php print (str_replace(' ', '-', strtolower($main_menu_name)));?>">
-                            <ul class="text-right">
+                            <ul>
                             <?php $items = wp_get_nav_menu_items( wp_get_nav_menu_name( $main_menu ) ); ?>
                             <?php foreach ( $items as $item ): 
 
                             ?>
                                 <li class="list-none mx-3 inline-block <?= esc_attr( implode( ' ', $item->classes ) ) ?>">
-                                    <a class="inline-block font-sans" href="<?= esc_url( $item->url ) ?>" target="<?= esc_attr( $item->target ?: '_self' ) ?>"><?= esc_html( $item->title ) ?></a>
+                                    <a class="inline-block" href="<?= esc_url( $item->url ) ?>" target="<?= esc_attr( $item->target ?: '_self' ) ?>"><?= esc_html( $item->title ) ?></a>
                                 </li>
                                 <?php endforeach; ?>
                             </ul>
