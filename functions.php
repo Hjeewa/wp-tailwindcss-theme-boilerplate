@@ -30,7 +30,8 @@ $vlTailwind_includes = array(
 	'/scripts-and-styles.php',		// enqueue scripts and styles
 	'/page-titles.php', 			// page title function
 	'/breadcrumbs.php', 			// breadcrumbs trail function
-	'/acf.php' 						// ACF settings
+	'/acf.php', 					// ACF settings
+	'/menus.php' 					// MENU inits
 );
 
 foreach ( $vlTailwind_includes as $file ) {
