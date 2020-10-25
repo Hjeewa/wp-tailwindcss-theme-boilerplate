@@ -25,8 +25,7 @@ if (local.proxy) {
     });
 }
 
-mix.tailwind();
-
+mix.tailwind('./tailwind-config.js');
 mix.js('assets/js/app.js', 'js');
 mix.sass('assets/scss/app.scss', 'css');
 
